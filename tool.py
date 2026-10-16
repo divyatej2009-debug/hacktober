@@ -9,7 +9,7 @@ def get_system_diagnostic() -> dict:
         "status": "online",
         "system": platform.system(),
         "python_version": platform.python_version(),
-        "timestamp": datetime.datetime.utcnow().isoformat() + "Z"
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")
     }
 
 # Tool declaration mapping for OpenAI API function calling
